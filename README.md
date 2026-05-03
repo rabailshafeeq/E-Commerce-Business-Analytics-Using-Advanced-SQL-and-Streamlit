@@ -1,42 +1,45 @@
-# E-Commerce Business Analysis Using Advanced SQL
+# E-Commerce Business Analytics Using Advanced SQL and Streamlit
 
-## Project Overview
-
-This project performs an in-depth analysis of an e-commerce dataset using advanced SQL techniques to extract meaningful business insights. The objective is to simulate real-world analytical tasks by answering critical business questions related to revenue performance, customer behavior, and product contribution.
-
-The project demonstrates how structured data can be transformed into actionable insights using SQL as the core analytical tool, supported by an interactive dashboard built with Streamlit.
+[![Open Dashboard](https://img.shields.io/badge/Open%20Dashboard-Streamlit-ff4b4b?style=for-the-badge\&logo=streamlit\&logoColor=white)](https://e-commerce-business-analytics-using-advanced-sql-and-app-qefuh.streamlit.app)
 
 ---
 
-## Objectives
+## Project Overview
 
-* Analyze revenue trends over time
-* Identify high-value customers
-* Evaluate product performance
-* Perform Pareto (80/20) analysis
-* Demonstrate advanced SQL for business problem solving
+This project presents a comprehensive business analysis of an e-commerce dataset using advanced SQL techniques. The objective is to simulate real-world data analysis by transforming raw transactional data into actionable insights.
+
+The analysis focuses on revenue performance, customer value, and product contribution, supported by an interactive Streamlit dashboard.
+
+---
+
+## Business Problem
+
+E-commerce platforms generate large volumes of data but often lack clear insights into:
+
+* Revenue growth patterns
+* High-value customers
+* Product contribution to total sales
+* Revenue concentration
+
+This project addresses these challenges using SQL-based analysis.
 
 ---
 
 ## Dataset Description
 
-The dataset represents a typical e-commerce system with relational tables:
-
-| Table         | Description                                                     |
-| ------------- | --------------------------------------------------------------- |
-| Orders        | Transaction-level data including customer, product, and revenue |
-| Customers     | Customer information                                            |
-| Products      | Product catalog                                                 |
-| Categories    | Product categorization                                          |
-| Monthly_Sales | Aggregated monthly revenue                                      |
+| Table         | Description                                                 |
+| ------------- | ----------------------------------------------------------- |
+| Orders        | Transaction-level data including customer, product, revenue |
+| Customers     | Customer information                                        |
+| Products      | Product catalog                                             |
+| Categories    | Product categorization                                      |
+| Monthly_Sales | Aggregated monthly revenue                                  |
 
 ---
 
 ## SQL Techniques Used
 
 ### Joins
-
-Combining multiple tables to build a complete analytical view:
 
 ```sql
 SELECT *
@@ -48,8 +51,6 @@ JOIN Customers c ON o.CustomerID = c.CustomerID;
 
 ### Aggregations
 
-Calculating business metrics:
-
 ```sql
 SELECT CustomerID, SUM(TotalAmount) AS total_spent
 FROM Orders
@@ -58,9 +59,7 @@ GROUP BY CustomerID;
 
 ---
 
-### Common Table Expressions (CTEs)
-
-Breaking complex queries into logical steps:
+### CTEs
 
 ```sql
 WITH customer_revenue AS (
@@ -75,8 +74,6 @@ SELECT * FROM customer_revenue;
 
 ### Window Functions
 
-Enabling ranking and advanced calculations:
-
 ```sql
 SELECT 
     CustomerID,
@@ -88,9 +85,7 @@ GROUP BY CustomerID;
 
 ---
 
-### Pareto Analysis (Key Feature)
-
-Identifying revenue concentration:
+### Pareto Analysis
 
 ```sql
 SELECT 
@@ -104,78 +99,58 @@ GROUP BY CustomerID;
 
 ---
 
-## Key Analysis and Insights
+## Dashboard Overview
 
-### Revenue Trends
+The project includes an interactive dashboard that provides:
 
-* Revenue shows an overall growth pattern over time
-* Month-over-month variation indicates seasonal or demand-driven changes
-
----
-
-### Customer Analysis
-
-* A small percentage of customers contributes a large portion of revenue
-* High-value customers play a critical role in overall business performance
+* Key performance indicators (Revenue, Orders, Customers, AOV)
+* Revenue growth analysis
+* Customer Pareto insights
+* Product performance evaluation
+* Data quality checks
 
 ---
 
-### Pareto Insight
+## Dashboard Visuals
 
-* Approximately 20% of customers generate the majority of revenue
-* Indicates strong revenue concentration and dependency on top customers
+### Executive Overview
+
+Provides a high-level summary of business performance using key metrics and revenue trends.
+
+![Executive Overview](assets/executive.png)
+
+---
+
+### Revenue Analysis
+
+Displays revenue growth, cumulative performance, and monthly variation to understand business trends.
+
+![Revenue Analysis](assets/revenue.png)
+
+---
+
+### Customer Pareto Analysis
+
+Identifies revenue concentration by showing how a small percentage of customers contribute to total revenue.
+
+![Customer Pareto](assets/pareto.png)
 
 ---
 
 ### Product Performance
 
-* A limited number of products dominate total sales
-* High-performing products should be prioritized for marketing and inventory
+Highlights top-performing products and evaluates how revenue is distributed across products.
+
+![Product Performance](assets/product.png)
 
 ---
 
-## Dashboard
+## Key Insights
 
-The project includes an interactive dashboard built with Streamlit that presents:
-
-* Executive KPIs (Revenue, Orders, Customers, Average Order Value)
-* Revenue trend and growth analysis
-* Customer Pareto analysis
-* Product performance insights
-* Data quality assessment
-
----
-
-## Recommended Visuals for README
-
-To strengthen this project, include screenshots of:
-
-1. Executive Overview (KPIs and revenue trend)
-2. Customer Pareto Analysis (cumulative revenue curve)
-3. Product Performance (top products and distribution)
-4. Revenue Analysis (monthly and cumulative growth)
-
----
-
-## Recommended SQL Output Tables
-
-Include sample outputs from your SQL queries:
-
-### Top Customers
-
-| CustomerID | Total_Spent |
-
-### Top Products
-
-| ProductID | Revenue |
-
-### Revenue Trend
-
-| Month | Revenue |
-
-### Pareto Analysis Output
-
-| CustomerID | Revenue | Cumulative Percentage |
+* Revenue shows consistent growth with periodic fluctuations
+* A small group of customers contributes the majority of revenue
+* Product sales are concentrated among top-performing items
+* Business performance can be improved through customer retention and product optimization
 
 ---
 
@@ -188,6 +163,7 @@ ecommerce-sql-dashboard/
 ├── sql/
 ├── app.py
 ├── requirements.txt
+├── assets/
 └── README.md
 ```
 
@@ -214,12 +190,6 @@ python -m streamlit run app.py
 
 ## Conclusion
 
-This project demonstrates how SQL can be used as a powerful tool for solving real business problems. By analyzing structured data, it provides insights into customer behavior, revenue distribution, and product performance.
-
-The findings highlight the importance of:
-
-* Customer retention strategies
-* Revenue concentration awareness
-* Product optimization
+This project demonstrates how SQL can be applied to real-world business scenarios to derive meaningful insights. It highlights the importance of understanding customer value, revenue concentration, and product performance for data-driven decision-making.
 
 ---
