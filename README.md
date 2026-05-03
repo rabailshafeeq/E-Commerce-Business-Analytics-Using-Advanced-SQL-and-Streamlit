@@ -152,20 +152,6 @@ Highlights top-performing products and evaluates how revenue is distributed acro
 * Product sales are concentrated among top-performing items
 * Business performance can be improved through customer retention and product optimization
 
----
-
-## Project Structure
-
-```
-ecommerce-sql-dashboard/
-│
-├── data/
-├── sql/
-├── app.py
-├── requirements.txt
-├── assets/
-└── README.md
-```
 
 ---
 
