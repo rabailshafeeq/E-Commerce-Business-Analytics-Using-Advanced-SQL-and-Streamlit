@@ -1,5 +1,9 @@
 # E-Commerce Business Analytics Using Advanced SQL and Streamlit
 
+**In one line:** SQL analysis of e-commerce revenue, customers and products, with an interactive Streamlit dashboard.
+
+**Skills demonstrated:** SQL (joins, CTEs, window functions, Pareto analysis), SQLite, Python (pandas), Streamlit, Plotly.
+
 [![Open Dashboard](https://img.shields.io/badge/Open%20Dashboard-Streamlit-ff4b4b?style=for-the-badge\&logo=streamlit\&logoColor=white)](https://e-commerce-business-analytics-using-advanced-sql-and-app-qefuh.streamlit.app)
 
 ---
